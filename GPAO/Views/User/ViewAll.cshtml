@@ -2,13 +2,14 @@
 
 @{
     ViewBag.Title = "ViewAll";
-    Layout = null;
 }
 
-<h2>View All Users</h2>
+<h2>ViewAll</h2>
 
-
-<table class="table  table-condensed">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.AppUserName)
@@ -35,13 +36,10 @@
             @Html.DisplayNameFor(model => model.Country)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DepartmentID)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.IsDeleted)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagePath)
+         <th>
+           @Html.DisplayNameFor(model => model.DepartmentID)
         </th>
         <th></th>
     </tr>
@@ -73,20 +71,15 @@
             @Html.DisplayFor(modelItem => item.Country)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        
+        <td>
             @Html.DisplayFor(modelItem => item.DepartmentID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsDeleted)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImagePath)
-        </td>
-        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
-            </td>
-        <td>
             @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
-            </td><td>
             @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
         </td>
     </tr>

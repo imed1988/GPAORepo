@@ -11,7 +11,9 @@ namespace GPAO.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class User
     {
         public int UserID { get; set; }
@@ -26,7 +28,14 @@ namespace GPAO.Models
         public Nullable<int> DepartmentID { get; set; }
         public Nullable<bool> IsDeleted { get; set; }
         public string ImagePath { get; set; }
-    
+
+        [NotMapped]
+        public HttpPostedFileBase ImageUpload { get; set; } 
+
         public virtual Departement Departement { get; set; }
+
+
+
+
     }
 }

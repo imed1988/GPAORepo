@@ -29,5 +29,17 @@ namespace GPAO.Controllers
                 return db.User.ToList<User>();
             }
         }
+
+        [HttpGet]
+        public ActionResult AddOrEdit(int id=0)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddOrEdit()
+        {
+            return View();
+        }
     }
 }
